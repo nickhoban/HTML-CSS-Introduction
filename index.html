@@ -1,133 +1,191 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset=UTF-8">
-<title>Web Page Design</title>
-    <style>
-        body {
-            width: 700;
-            margin: 0 auto;
-            padding: 0;
-            text-align: center;
-            font-family: Helvetica, sans-serif;
-        }
-        
-        header {
-            background-color: lightgray;
-        }
+  <meta charset="UTF-8">
+  <title>Web Page Design</title>
 
-        header h1 {
-            height: 80px;
-            line-height: 80px;
-        }
+  <style>
 
-        nav {
-            background-color: darkgray;
-            text-align: left;
-            padding: 10px;
-        }
+    /* This is about as simple and minimal as I can get the CSS but
+    still "style" the page. 
 
-        nav a {
-            color: white;
-            text-align: center;
-            padding: 10px 10px;
-            text-decoration: none;
-        }
+    For the in-class demo this is the process I follow: 
+      * style a element (perhaps one rule)
+      * save document/CSS
+      * open in browser, observe the effects
+      * repeat until all elements styled
 
-        nav a:hover {
-            background-color: lightgray;
-            color: black;
-            padding: 10px;
-        }
+    I follow a simple strategy for constructing the CSS, start
+    form the outermost container, top down, left to right.  This
+    process is not critical but gives students a workflow or a "checklist" 
+    they can follow to make sure they style all the elements they want.
 
-        #featured {
-            background-color: lightgray;
-            float: left;
-            width: 200px;
-        }
+    Hopefully giving them a process to construct the CSS will make update
+    and additions cleaner (easiy to locate elements), and hopefully
+    stops elements being repeated the CSS (often causing problems).
 
-        #content {
-            float: right;
-            width: 500px;
-        }
+    I mention some simple design concepts, but 'stylistic design' is 
+    beyond the scope of this unit.  So we keep it simple, consistent 
+    colour scheme, one (or two) fonts, links look the same etc. 
+    */
 
-        #extras {
-            background-color: lightgray;
-            float: left;
-            width: 20%;
-        }
-        
-        #extras p {
-            font-size: 50%;
-            text-align: center;
-            line-height: normal;
-        }
+    body {    /* The outermost container, ALL inner elements will 
+      inherit from this styling.  Good place to put defaults, clear
+      ALL margins etc */
+      width: 700px;  /* arbitrary choice, could do %, but px for now */
+      margin: 0 auto;  /* centers the <body> within the page */
+      padding: 0;
+      text-align: center;
+      font-family: Helvetica, sans-serif;
+    }
 
-        footer {
-            clear: both;
-            text-align: center;
-            background-color: darkgray;
-        }
 
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
+    /* Colours add to look and feel of page. Colour theory is beyond 
+    the scope of this unit. 
+    
+    Hex colours can be initially confusing so I have used names from: 
+        https://en.wikipedia.org/wiki/Web_colors 
 
-    </style>
+    I have kept the color palette simple, 
+      * background either darkgray or light gray
+      * text either white or black.
+    
+    I look at online-tools later in the semester. Could choose a palette
+    from one of the many online generators: 
+        https://coolors.co/
+    */
+    header {
+      background-color: lightgray;
+    }
+
+    header h1 {
+      height: 80px;
+      line-height: 80px;
+    }
+
+    nav {
+      background-color: darkgray;
+      text-align: left;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;  /* for consistency, make links the same */
+      text-align: center;
+      padding: 10px 16px; /* top-bottom padding must match <nav> */
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: lightgray;
+      color: black;
+    }
+
+    #featured {
+      background: lightgray;
+      float: left;
+      width: 200px;
+    }
+
+    #content {
+      float: right;
+      width: 500px;
+    }
+
+    #extras {
+      background: lightgray;
+      float: left;
+      width: 200px;
+    }
+
+    #extras p {
+      font-size: 50%;
+      text-align: center;
+      line-height: normal;
+    }
+
+    footer {
+      clear: both;
+      text-align: center;
+      background-color: darkgray;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* The following styling is not necessary, just pads a paragraph
+    left and right.  It is a simple way to show how you can make little 
+    design changes to a document. */
+    p {
+      margin: 0 10px 10px;
+    }
+  </style>
 </head>
-<body>                  
-    <header>
-        <h1 style="color:black;text-align:center">Web Page Design</h1>
-            <nav>				
-                <a	href="about.html">About</a>	
-                <a	href="#featured">The Idea</a>
-                <a	href="#content">Content</a>	
-                <a	href="#presentation">Presentation</a>
-                <a	href="#extras">Technology</a>
-		    </nav>	
-    </header>
 
-    <section>
-        <section id = "featured">
-            <h2>The Idea</h2>
-            <p>Okay, so you have an <em>idea</em> for a website or an assignment due for Business Web Technologies.
-            You want to make it look <strong>professional</strong> and easy to use.</p>
-            <p>What is the first thing you need to work on?</p>
-        </section>	
+<body>
+  <header>
+    <h1>Web Page Design</h1>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="#featured">The Idea</a>
+      <a href="#content">Content</a>
+      <a href="#presentation">Presentation</a>
+      <a href="#extras">Technologies</a>
+    </nav>
+  </header>
 
-        <section id="content">
-            <h2>Content	-	HTML</h2>		
-            <p> The	aim	of	design	is	to	enhance	the	presentation	of	the	content!		
-            Content	is	the	most	important	element	of	a	website.</p>	
-            <p>You	should	spend	time	gathering	your	content!	Thinking	about	your		
-            layout	and	sketching	your	ideas	on	paper.</p>	
+  <section id="featured">
+    <h2>The Idea</h2>
+    <p>Okay, so you have an <em>idea</em> for a website or an assignment due for
+    Business Web Technologies. You want to make it look professional and easy to
+    use.</p>
+    <p>What is the first thing you need to work on?</p>
+  </section>
 
-        <h2	id="content">Presentation	-	CSS</h2>		
-        <p> Styling	your	content	will	make	your	website	more	useable.	For	websites		
-            we	use	Cascading	Style	Sheets	(CSS)</p>	
-        <p>CSS	is	a	set	of	rules	that	allow	you	to	style	content.	The	rules	are		
-        <em>element:style</em>	pairs,	which	identify	the	element	and	how	it	its		
-            to	be	styled</p>	
-    </section>	
+  <section id="content">
+    <h2>Content - HTML</h2>
+    <p>The aim of design is to enhance the presentation of the content! Content
+    is the most important element of a website.</p>
+    <p>You should spend time gathering your content, thinking about your layout,
+    and sketching your ideas on paper</p>
 
-    <section id="extras">
-        <h2>Web	Technology</h2>	
-        <h3>HTML5</h3>	
-        <img	src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"	width="50"	alt="HTML5" />
-        <p>Image	Source:	<a	href="https://en.wikipedia.org/wiki/HTML5">	HTML5	Logo	</a> </p>	
-        <h3>CSS3</h3>	
-        <img	src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"	width="50"	alt="HTML5" />
-        <p>Image	Source:	<a	href="https://commons.wikimedia.org/wiki/File:CSS3_logo_and_wordmark.svg">	HTML5	Logo	</a> </p>	
-	</section>
+    <h2 id="presentation">Presentation - CSS</h2>
+    <p>Styling content will go a long way, for websites we use Cascading Style
+    Sheets (CSS).</p>
+    <p>CSS is a set of rules that allow you to style content. The rules are
+    <em>element:style</em> pairs, which identify the <em>element</em> and how it
+    is to be <em>styled</em>.</p>
+  </section>
 
-        <footer> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-            <img alt="Creative Commons License" style=“border-width:0"
-            src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-            
-            <br />This work is licensed under a 
-            <a rel="license"
-             href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-        </footer>
-    </body>
+  <section id="extras">
+    <h2>Web Tech Used</h2>
+    <h3>HTML5</h3>
+    <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+    width="60" alt="HTML5 Logo" />
+    <p> Image Source: <a href="https://en.wikipedia.org/wiki/HTML5">Wikipedia
+        HTML5 Logo</a> </p>
+    <h3>CSS3</h3>
+    <img
+    src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+    width="50" alt="CSS3 Logo" />
+    <p> Image Source: <a
+    href="https://commons.wikimedia.org/wiki/File:CSS3_logo_and_wordmark.svg">Wikipedia
+    CSS 3 Logo</a> </p>
+  </section>
+
+  <footer>
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+    alt="Creative Commons License" style="border-width:0"
+    src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work
+    is licensed under a <br /><a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+    Attribution 4.0 International License</a>
+  </footer>
+</body>
+
 </html>
